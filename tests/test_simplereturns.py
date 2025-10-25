@@ -1,6 +1,6 @@
 """Unit tests for simplereturns package."""
 
-from thinktwiceutils import SE, SR
+from ttutils import SE, SR
 
 
 def test_sr_success_creation():

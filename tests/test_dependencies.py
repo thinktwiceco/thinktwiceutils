@@ -2,7 +2,7 @@
 
 import pytest
 
-from thinktwiceutils.dependencies.dependencies import Dependency
+from ttutils.dependencies.dependencies import Dependency
 
 
 def test_dependency_registration():
