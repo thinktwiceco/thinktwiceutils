@@ -35,7 +35,7 @@ class Dependency:
     def restore(self) -> None:
         _, original_dep = self._original_dep
         self.registry[self.key] = original_dep
-        
+
     @contextmanager
     def override(self, overrider_dependency: Callable) -> None:
         self._override_key = self._get_fn_hash(overrider_dependency)
