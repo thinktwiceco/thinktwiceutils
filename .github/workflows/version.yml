@@ -129,7 +129,7 @@ jobs:
       if: steps.version.outputs.skipped != 'true'
       run: |
         # Show what version setuptools_scm will use
-        uv run python -c "import aiwebexplorer; print(f'Package version: {aiwebexplorer.__version__}')"
+        uv run python -c "import thinktwiceutils; print(f'Package version: {thinktwiceutils.__version__}')"
 
     - name: Build package
       if: steps.version.outputs.skipped != 'true'

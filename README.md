@@ -1,9 +1,10 @@
 # thinktwiceutils
 
-This repository is a toolbox of utilities for the Thinktwice project.
+This repository is a toolbox of utilities.
 
 ## Subpackages
 
 Each subpackage has its own README file. The main README will link to the subpackages.
 
-- [Dependencies](./src/thinktwiceutils/README.md)
+- [Dependencies](./src/thinktwiceutils/dependencies/README.md)
+- [SimpleReturns](./src/thinktwiceutils/simplereturns/README.md)

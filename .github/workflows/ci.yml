@@ -1,4 +1,4 @@
-name: WebExplorer CI/CD
+name: thinktwiceutils CI/CD
 
 on:
   push:
