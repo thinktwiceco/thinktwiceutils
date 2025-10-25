@@ -94,7 +94,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.version.outputs.skipped != 'true'
-      run: uv sync --locked --all-extras --dev
+      run: uv sync --locked
 
     - name: Run tests before publishing
       if: steps.version.outputs.skipped != 'true'

@@ -25,7 +25,7 @@ jobs:
         enable-cache: true
 
     - name: Install dependencies
-      run: uv sync --dev
+      run: uv sync
 
     - name: Run format check
       run: make lint-check
@@ -60,7 +60,7 @@ jobs:
         enable-cache: true
 
     - name: Install dependencies
-      run: uv sync --dev
+      run: uv sync
 
     - name: Auto-format code
       run: |
