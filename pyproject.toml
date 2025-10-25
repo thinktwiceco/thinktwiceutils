@@ -1,0 +1,41 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+    "build",
+    "setuptools_scm[toml]",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thinktwiceutils"
+description = "A collection of utilities for the Thinktwice project."
+authors = [{ name = "Francesco Vertemati", email = "verte.fra@gmail.com" }]
+readme = "README.md"
+requires-python = ">= 3.12"
+dynamic = ["version"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+write_to = "src/thinktwiceutils/_version.py"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+write_to = "src/aiwebexplorer/_version.py"
+
+
+[tool.ruff]
+# Use Ruff's default recommended rules, plus modern typing & formatting best-practices
+target-version = "py312"
+line-length = 120
+preview = true
+exclude = ["src/aiwebexplorer/_version.py"]
+
+[tool.ruff.lint]
+select = ["F", "E", "I", "B", "UP"]  # <-- Add rules like import-sorting, unused imports etc
+ignore = []
