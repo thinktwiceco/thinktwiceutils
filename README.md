@@ -47,22 +47,36 @@ if result.is_success:
 
 ### Dependencies
 
-A lightweight dependency injection utility for managing service dependencies.
+A lightweight dependency injection utility that wraps callables for easy testing and mocking.
 
 **Key Features:**
-- Simple registration and resolution of dependencies
-- Type-safe dependency injection
-- Minimal boilerplate
+- Wrap any callable (function, method) as a dependency
+- Override dependencies in tests with context managers
+- Automatic hash-based registration prevents duplicates
+- Maintains original function signatures
 
 **Example:**
 ```python
 from ttutils.dependencies.dependencies import Dependency
 
-# Register a service
-Dependency.register("database", my_db_instance)
+# Define and wrap a function
+def get_database_url() -> str:
+    return "postgresql://prod-server/db"
 
-# Resolve it later
-db = Dependency.resolve("database")
+db_url = Dependency(get_database_url)
+
+# Use it normally
+print(db_url())  # "postgresql://prod-server/db"
+
+# Override in tests
+def test_database_url():
+    return "postgresql://test-server/db"
+
+with db_url.override(test_database_url):
+    print(db_url())  # "postgresql://test-server/db"
+
+# Automatically restored after context
+print(db_url())  # "postgresql://prod-server/db"
 ```
 
 [Full Documentation](./src/ttutils/dependencies/README.md)
